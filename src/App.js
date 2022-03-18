@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Layout from "./components/Layout";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Home from "./Pages/Home";
+import Chatbot from "./Pages/Chatbot";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Linky přesunout do samostanté komponenty menu */}
+      <Link to="/home">Home</Link>
+      <Link to="/chatbot">Chatbot</Link>
+
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/chatbot">
+          <Chatbot />
+        </Route>
+      </Switch>
     </div>
   );
 }

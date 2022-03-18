@@ -1,0 +1,58 @@
+:root {
+  --mainHeaderColor: #ba5a66;
+  --btnKontaktyColor: #ba5a66;
+  --btnKontaktyFontColor: #76c9c3;
+}
+
+.home {
+  text-align: left;
+}
+
+.header-h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--mainHeaderColor);
+}
+
+.header-h2 {
+  color: var(--h2HeaderColor);
+}
+
+.infostatsbox {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  margin: 75px auto;
+}
+
+.info {
+  flex: 1 1 45%;
+  /*padding: 0 15px 0 30px; */
+}
+
+.stats {
+  flex: 1 1 45%;
+  padding-left: 450px;
+}
+
+.alert {
+  padding: 15px 30px;
+}
+
+.a--btn__kontakty {
+  display: block;
+  padding: 10px;
+  width: 150px;
+  background-color: var(--btnKontaktyColor);
+  color: var(--btnKontaktyFontColor);
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.a--btn__kontakty:hover {
+  padding: 11px;
+}

@@ -1,0 +1,17 @@
+:root {
+  --mainPartInsideBgColor: #f2f2f2;
+  --mainPartDefaultFontColor: #5abaae;
+}
+.mainPart {
+  background-color: var(--mainPartBgColor);
+  color: var(--mainPartDefaultFontColor);
+  width: 100%;
+  height: 720px;
+}
+
+.mainPart-inside {
+  background-color: var(--mainPartInsideBgColor);
+  border-radius: 8%;
+  width: 100%;
+  height: 100%;
+}

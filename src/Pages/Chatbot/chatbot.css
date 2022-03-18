@@ -1,0 +1,15 @@
+:root {
+  --questionsBoxBgColor: #5abaae;
+  --questionBoxFontColor: #ffffff;
+}
+.questionsBox {
+  background-color: var(--questionsBoxBgColor);
+  width: 550px;
+  padding: 25px;
+  margin: 45px auto;
+  border-radius: 10px;
+}
+
+.questionsBox {
+  color: var(--questionBoxFontColor);
+}

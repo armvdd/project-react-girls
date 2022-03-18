@@ -1,0 +1,19 @@
+:root {
+  --fontColor: #ffffff;
+}
+
+.menu {
+  text-align: right;
+  padding: 25px 70px;
+}
+
+.menu-ul__li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.menu-a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--fontColor);
+}
