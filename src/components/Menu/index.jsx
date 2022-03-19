@@ -1,10 +1,17 @@
 import React from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./menu.css";
 
 const Menu = () => {
   return (
     <div className="menu">
-      <ul className="menu-ul">
+      <Link to="/home" className="menuLink menuLink--home">
+        Home
+      </Link>
+      <Link to="/chatbot" className="menuLink menuLink--home">
+        Chatbot
+      </Link>
+      {/*<ul className="menu-ul">
         <li className="menu-ul__li menu-ul__li1">
           <a href="/" className="menu-a menu-a1">
             Home
@@ -25,7 +32,7 @@ const Menu = () => {
             Kontakty
           </a>
         </li>
-      </ul>
+  </ul> */}
     </div>
   );
 };

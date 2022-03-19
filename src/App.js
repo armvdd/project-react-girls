@@ -7,11 +7,14 @@ import Chatbot from "./Pages/Chatbot";
 function App() {
   return (
     <div className="App">
-      {/* Linky přesunout do samostanté komponenty menu */}
+      {/* Linky přesunout do samostanté komponenty menu 
       <Link to="/home">Home</Link>
       <Link to="/chatbot">Chatbot</Link>
+      */}
 
-      <Switch>
+      {/* tohle do Main:
+
+<Switch>
         <Route path="/home">
           <Home />
         </Route>
@@ -19,6 +22,10 @@ function App() {
           <Chatbot />
         </Route>
       </Switch>
+
+*/}
+
+      <Layout />
     </div>
   );
 }

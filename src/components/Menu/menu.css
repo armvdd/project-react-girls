@@ -7,13 +7,15 @@
   padding: 25px 70px;
 }
 
-.menu-ul__li {
-  display: inline-block;
-  margin-right: 30px;
-}
-
-.menu-a {
+.menuLink {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--fontColor);
+  margin-right: 30px;
+}
+.menu-ul__li {
+  display: inline-block;
+}
+
+.menu-a {
 }
