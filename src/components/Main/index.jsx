@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import "./main.css";
 import Home from "../../Pages/Home";
 import Chatbot from "../../Pages/Chatbot";
+import Vyhledavac from "../../Pages/Vyhledavac";
+import Kontakty from "../../Pages/Kontakty";
 
 const Main = () => {
   return (
@@ -17,6 +19,12 @@ const Main = () => {
           </Route>
           <Route path="/chatbot">
             <Chatbot />
+          </Route>
+          <Route path="/vyhledavac">
+            <Vyhledavac />
+          </Route>
+          <Route path="/kontakty">
+            <Kontakty />
           </Route>
         </Switch>
       </div>
