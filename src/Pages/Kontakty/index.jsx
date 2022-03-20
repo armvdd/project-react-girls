@@ -4,7 +4,7 @@ import "./kontakty.css";
 const Kontakty = () => {
   return (
     <div className="kontakty-container">
-      <p>Kontakty</p>
+      <p>kontakty</p>
     </div>
   );
 };

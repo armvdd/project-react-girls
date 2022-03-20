@@ -56,3 +56,8 @@
 .a--btn__kontakty:hover {
   padding: 11px;
 }
+
+.btn--kontakty {
+  max-width: 100px;
+  margin: 0 auto;
+}

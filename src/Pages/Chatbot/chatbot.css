@@ -8,8 +8,14 @@
   padding: 25px;
   margin: 45px auto;
   border-radius: 10px;
+  text-align: center;
 }
 
 .questionsBox {
   color: var(--questionBoxFontColor);
+}
+
+.qBox {
+  max-width: 650px;
+  margin: 20px auto;
 }

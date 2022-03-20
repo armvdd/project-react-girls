@@ -1,5 +1,6 @@
 :root {
   --fontColor: #ffffff;
+  --menuHoverColor: #ba5a66;
 }
 
 .menu {
@@ -12,6 +13,10 @@
   text-transform: uppercase;
   color: var(--fontColor);
   margin-right: 30px;
+}
+
+.menuLink:hover {
+  color: var(--menuHoverColor);
 }
 .menu-ul__li {
   display: inline-block;

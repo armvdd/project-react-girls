@@ -1,5 +1,7 @@
 import React from "react";
 import "./home.css";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const Home = () => {
   return (
@@ -37,11 +39,22 @@ const Home = () => {
       </div>
 
       {/* button kontakty */}
+      {/* HTML ver.:
       <p className="p--btn p--btn__kontakty">
         <a href="kontakty.jsx" className="a--btn a--btn__kontakty">
           btn proklik kontakty
         </a>
       </p>
+      
+      */}
+
+      <div className="btn--kontakty">
+        <Stack spacing={2} direction="row">
+          <Button variant="contained" color="inherit">
+            Kontakty
+          </Button>
+        </Stack>
+      </div>
     </div>
   );
 };
