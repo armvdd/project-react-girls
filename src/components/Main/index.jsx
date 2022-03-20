@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "./main.css";
 import Home from "../../Pages/Home";
 import Chatbot from "../../Pages/Chatbot";
@@ -9,6 +9,9 @@ const Main = () => {
     <div className="mainPart">
       <div className="mainPart-inside">
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route path="/home">
             <Home />
           </Route>
