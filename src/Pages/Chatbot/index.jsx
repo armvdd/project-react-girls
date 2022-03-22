@@ -2,6 +2,7 @@ import React from "react";
 import "./chatbot.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import ChatbotCard from "../../components/ChatbotCard";
 
 const Chatbot = () => {
   return (
@@ -22,6 +23,10 @@ const Chatbot = () => {
             start
           </Button>
         </Stack>
+      </div>
+      <div className="cards">
+        <ChatbotCard />
+        <ChatbotCard />
       </div>
     </div>
   );
