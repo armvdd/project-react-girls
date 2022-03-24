@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medicaments",
+  "info": {
+    "singularName": "medicament",
+    "pluralName": "medicaments",
+    "displayName": "medicaments",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "minLength": 5
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    }
+  }
+}
