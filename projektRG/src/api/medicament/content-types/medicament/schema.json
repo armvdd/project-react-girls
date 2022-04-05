@@ -23,9 +23,24 @@
       "required": true,
       "minLength": 5
     },
+    "substance": {
+      "type": "string"
+    },
+    "effect": {
+      "type": "string"
+    },
+    "wean": {
+      "type": "string"
+    },
     "slug": {
       "type": "uid",
       "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "medicaments"
     }
   }
 }
