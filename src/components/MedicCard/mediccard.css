@@ -11,6 +11,7 @@
   /*margin: 0 auto; pak upravit přes flexbox */
   box-shadow: 6px 5px 6px -5px #999999;
   margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 .mediccard--content {

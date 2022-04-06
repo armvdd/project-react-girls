@@ -32,9 +32,13 @@ const Vyhledavac = () => {
   }
 
   const [data, setData] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState([]);
+  const [filteredName, setFilteredName] = useState("");
+
   useEffect(() => {
     fetch(
-      "http://localhost:1337/api/medicaments"
+      "/api/medicaments"
     ) /*http://localhost:1337/api/medicaments   /api/medicaments*/
       .then((response) => response.json())
       .then((json) => {
@@ -42,14 +46,37 @@ const Vyhledavac = () => {
       });
   }, []);
 
+  useEffect(() => {
+    setCards(data);
+  }, [data]);
+
+  const handleChange = (e) => {
+    setCards(
+      cards.filter((el) =>
+        el.attributes.name.toLowerCase().includes(e.target.value)
+      )
+    );
+
+    console.log(cards);
+  };
+
+  /*console.log(data);*/
+  /*console.log(cards);*/
+  //console.log(filteredName);
+  //console.log(filteredCards);
+
   return (
     <div className="vyhledavac-container">
       <p>vyhledávač</p>
 
+      <div className="searchBox">
+        <input type="text" onChange={handleChange}></input>
+      </div>
+
       <div className="cards-container">
-        {data ? (
+        {cards ? (
           <>
-            {data.map((medicament) => (
+            {cards.map((medicament) => (
               <MedicCard
                 key={medicament.id}
                 name={medicament.attributes.name}
@@ -68,11 +95,5 @@ const Vyhledavac = () => {
     </div>
   );
 };
-{
-  /*<ul>
-          {data.map((medicament) => (
-            <li key={medicament.id}>{medicament.attributes.name}</li>
-          ))}
-          </ul> */
-}
+
 export default Vyhledavac;
