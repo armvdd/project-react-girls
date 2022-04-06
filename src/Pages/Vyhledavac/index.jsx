@@ -67,10 +67,13 @@ const Vyhledavac = () => {
 
   return (
     <div className="vyhledavac-container">
-      <p>vyhledávač</p>
-
       <div className="searchBox">
-        <input type="text" onChange={handleChange}></input>
+        <input
+          type="text"
+          placeholder="hledat"
+          onChange={handleChange}
+          className="searchBox__input"
+        ></input>
       </div>
 
       <div className="cards-container">

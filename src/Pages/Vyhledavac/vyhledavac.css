@@ -9,3 +9,13 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.searchBox {
+  margin-bottom: 25px;
+}
+
+.searchBox__input {
+  width: 350px;
+  height: 25px;
+  text-align: center;
+}
