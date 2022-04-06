@@ -3,38 +3,61 @@ import "./home.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
+import psychoGraf from "./psycho.svg";
+
 const Home = () => {
   return (
     <div className="home">
-      <h1 className="header-h1">Název aplikace</h1>
+      <h1 className="header-h1">Dobro</h1>
 
       {/* box info + statistiky */}
       <div className="infostatsbox">
         {/* info */}
         <div className="info">
           <h2 className="header-h2 header-h2--info">Info:</h2>
-          <p className="p--info p--info__p1">basic info, úvod</p>
+          <p className="p--info p--info__p1">
+            Zneužívání léků na předpis je podceňovaný, avšak rozšířený problém.
+            Vede k závislosti, která je stejně závažná jako závislost na
+            alkoholu nebo nelegálních psychotropních látkách.{" "}
+          </p>
         </div>
 
         {/* statistiky */}
         <div className="stats">
-          <h2 className="header-h2 header-h2--stats">Statistiky:</h2>
-          <p className="p--stats p--stats__p1">img a popisky statistik</p>
+          {/*<h2 className="header-h2 header-h2--stats">Statistiky:</h2>*/}
+          <p className="p--stats p--stats__p1">
+            Při extrapolaci na celou populaci ČR ve věku 15+ let je celkem 1,35
+            mil. osob vykazujících známky problémového užívání psychoaktivních
+            léků, z toho: <span className="p--stats__p1__star star">*</span>
+          </p>
+          <img src={psychoGraf} className="stats__img stats--psychograf" />
+          <p className="p--stats p--stats__p2">
+            zdroj: Zpráva o problematickém užívání psychoaktivních léků v České
+            republice 2021 [Report on Problematic Psychoactive Medicines Use in
+            the Czech Republic 2021] MRAVČÍK, V. (Ed.). Praha: Úřad vlády České
+            republiky
+          </p>
         </div>
       </div>
 
       {/* upozornění */}
       <div className="alert">
         <p className="p--alert p--alert__p1">
-          upozornění na problém... Sugar plum bonbon dragée tart marzipan
-          jelly-o shortbread soufflé. Tootsie roll dragée cake powder lollipop
-          soufflé. Sweet muffin caramels brownie pie. Liquorice fruitcake ice
-          cream soufflé oat cake. Jujubes pastry gummi bears soufflé oat cake.
-          Tart powder jelly-o chocolate bar gingerbread carrot cake gummies
-          biscuit. Chocolate candy canes chocolate bar cookie candy canes
-          marzipan. Cotton candy jelly-o marshmallow sugar plum jelly-o
-          macaroon. Sugar plum jujubes cupcake jelly fruitcake caramels. Dessert
-          caramels pudding marzipan bonbon.
+          Ačkoliv je zneužívání léčiv seriózní problém, srovnatelný s užíváním a
+          závislostí na jiných legálních i nelegálních drogách, k jeho řešení se
+          dosud seriózně nepřistoupilo. Tolerance veřejnosti k lékům je
+          všeobecně vysoká, přičemž i sami lékaři mají tendenci řešit každou
+          potíž "pilulkou". Užívání léků na předpis se často prodlužuje nad míru
+          nutnou a především doporučenou, a to i přes vysoké riziko vzniku
+          závislosti. Léky jsou poměrně snadno dostupné na internetu a tak
+          abúzus je daleko snadnější než u drog nelegálních, ačkoliv následky
+          zneužívání léčiv jsou v podstatě stejně závažné.
+        </p>
+        <p className="p--alert p--alert__p2">
+          I když se zneužívání léků začíná věnovat pozornost, prevence zatím
+          nestojí za moc. Máte pocit, že se vám užívání léků vymklo kontrole?
+          Máte obavy o někoho blízkého? Pokračujte chatbotem. Nebo kontaktujte
+          nejbližší centrum pomoci, poradenství a prevence v oblasti závislostí.
         </p>
       </div>
 
