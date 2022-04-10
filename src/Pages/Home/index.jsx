@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./home.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
@@ -28,7 +29,7 @@ const Home = () => {
           <p className="p--stats p--stats__p1">
             Při extrapolaci na celou populaci ČR ve věku 15+ let je celkem 1,35
             mil. osob vykazujících známky problémového užívání psychoaktivních
-            léků, z toho: <span className="p--stats__p1__star star">*</span>
+            léků, z toho: <span className="p--stats__p1__star star">&#42;</span>
           </p>
           <img src={psychoGraf} className="stats__img stats--psychograf" />
           <p className="p--stats p--stats__p2">
@@ -73,7 +74,12 @@ const Home = () => {
 
       <div className="btn--kontakty">
         <Stack spacing={2} direction="row">
-          <Button variant="contained" color="inherit">
+          <Button
+            variant="contained"
+            color="inherit"
+            component={Link}
+            to="/kontakty"
+          >
             Kontakty
           </Button>
         </Stack>

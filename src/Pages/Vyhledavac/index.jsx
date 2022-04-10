@@ -3,19 +3,19 @@ import { useQuery } from "react-query";
 import MedicCard from "../../components/MedicCard";
 import "./vyhledavac.css";
 
-/*const getMedicaments = async () => {
+const getMedicaments = async () => {
   const response = await fetch("/api/medicaments");
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
   return response.json();
-};*/
+};
 
 const Vyhledavac = () => {
-  {
-    /*const query = useQuery("medicaments", getMedicaments);
+  //{
+  const { data, isLoading } = useQuery("medicaments", getMedicaments);
 
-  const [data, setData] = useState({});
+  /*const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -28,42 +28,26 @@ const Vyhledavac = () => {
     } else {
       setIsLoading(false);
     }
-  }, [data]);*/
-  }
+  }, [data]);
+  }*/
 
-  const [data, setData] = useState([]);
-  const [cards, setCards] = useState([]);
-  const [filteredCards, setFilteredCards] = useState([]);
+  //const [data, setData] = useState([]);
+
   const [filteredName, setFilteredName] = useState("");
 
-  useEffect(() => {
+  /*useEffect(() => {
     fetch(
       "/api/medicaments"
-    ) /*http://localhost:1337/api/medicaments   /api/medicaments*/
+    ) /*http://localhost:1337/api/medicaments   /api/medicaments
       .then((response) => response.json())
       .then((json) => {
         setData(json.data);
       });
-  }, []);
-
-  useEffect(() => {
-    setCards(data);
-  }, [data]);
+  }, []);*/
 
   const handleChange = (e) => {
-    setCards(
-      cards.filter((el) =>
-        el.attributes.name.toLowerCase().includes(e.target.value)
-      )
-    );
-
-    console.log(cards);
+    setFilteredName(e.target.value);
   };
-
-  /*console.log(data);*/
-  /*console.log(cards);*/
-  //console.log(filteredName);
-  //console.log(filteredCards);
 
   return (
     <div className="vyhledavac-container">
@@ -73,13 +57,20 @@ const Vyhledavac = () => {
           placeholder="hledat"
           onChange={handleChange}
           className="searchBox__input"
+          value={filteredName}
         ></input>
       </div>
 
       <div className="cards-container">
-        {cards ? (
-          <>
-            {cards.map((medicament) => (
+        {isLoading && <p>Loading...</p>}
+        {data &&
+          data.data
+            .filter((el) =>
+              el.attributes.name
+                .toLowerCase()
+                .includes(filteredName.toLocaleLowerCase())
+            )
+            .map((medicament) => (
               <MedicCard
                 key={medicament.id}
                 name={medicament.attributes.name}
@@ -90,10 +81,6 @@ const Vyhledavac = () => {
                 category={medicament.attributes.categories}
               />
             ))}
-          </>
-        ) : (
-          <p>Loading...</p>
-        )}
       </div>
     </div>
   );
