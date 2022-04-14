@@ -33,6 +33,10 @@
   /*padding: 0 15px 0 30px; */
 }
 
+.p--info__p1 {
+  margin-bottom: 15px;
+}
+
 .stats {
   flex: 1 1 45%;
   padding-top: 30px;
@@ -53,10 +57,19 @@
   font-size: 10px;
   font-style: italic;
   margin-top: 10px;
+  position: relative;
+}
+
+.p--stats__p2__star {
+  color: #ba5a66;
+  font-size: 7px;
+  position: absolute;
+  left: -5.5px;
 }
 
 .stats--psychograf {
   width: 295px;
+  margin-top: 20px;
 }
 
 .alert {

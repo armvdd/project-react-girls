@@ -21,6 +21,11 @@ const Home = () => {
             Vede k závislosti, která je stejně závažná jako závislost na
             alkoholu nebo nelegálních psychotropních látkách.{" "}
           </p>
+          <p className="p--info p--info__p2">
+            Předávkování benzodiazepiny vede k ospalosti až kóma. Ročně je
+            hospitalizováno cca 150–200 osob pro úraz pod vlivem psychoaktivních
+            léků.
+          </p>
         </div>
 
         {/* statistiky */}
@@ -33,10 +38,10 @@ const Home = () => {
           </p>
           <img src={psychoGraf} className="stats__img stats--psychograf" />
           <p className="p--stats p--stats__p2">
-            zdroj: Zpráva o problematickém užívání psychoaktivních léků v České
-            republice 2021 [Report on Problematic Psychoactive Medicines Use in
-            the Czech Republic 2021] MRAVČÍK, V. (Ed.). Praha: Úřad vlády České
-            republiky
+            <span className="p--stats__p2__star star">&#42;</span>zdroj: Zpráva
+            o problematickém užívání psychoaktivních léků v České republice 2021
+            [Report on Problematic Psychoactive Medicines Use in the Czech
+            Republic 2021] MRAVČÍK, V. (Ed.). Praha: Úřad vlády České republiky
           </p>
         </div>
       </div>
