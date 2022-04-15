@@ -1,6 +1,6 @@
 :root {
   --mainPartInsideBgColor: #f2f2f2;
-  --mainPartDefaultFontColor: #5abaae;
+  --mainPartDefaultFontColor: #8e999b;
 }
 .mainPart {
   background-color: var(--mainPartBgColor);
