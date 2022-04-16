@@ -192,6 +192,12 @@ const Kontakty = () => {
           Národní linka pro odvykání
         </p>
         <p className="kontakty-linky__p kontakty-linky__p2">tel: 800 350 000</p>
+        <p className="kontakty-linky__p kontakty-linky__p3">
+          web:{" "}
+          <a href="www.chciodvykat.cz" className="kontakty-linky__p3--a">
+            www.chciodvykat.cz
+          </a>
+        </p>
         <img src={doodle} className="lovingDoodle" />
       </div>
     </div>

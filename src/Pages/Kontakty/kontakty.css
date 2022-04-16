@@ -88,11 +88,11 @@
     rgba(242, 242, 242, 1) 100%
   );*/
 
-  background: rgb(151, 149, 149);
+  background: rgb(242, 242, 242);
   background: linear-gradient(
-    230deg,
-    rgba(151, 149, 149, 1) 0%,
-    rgba(242, 242, 242, 1) 50%
+    84deg,
+    rgba(242, 242, 242, 1) 25%,
+    rgba(151, 149, 149, 1) 100%
   );
 
   margin-top: -30px;
@@ -106,6 +106,14 @@
   color: var(--headersColor);
   font-size: 20px;
   margin-bottom: 15px;
+}
+
+.kontakty-linky__p3 {
+  color: #009785;
+}
+
+.kontakty-linky__p3--a {
+  color: #009785;
 }
 
 /* loader */

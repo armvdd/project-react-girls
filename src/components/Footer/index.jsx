@@ -4,7 +4,13 @@ import "./footer.css";
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>patička</p>
+      <p className="footer__p ilustrace">
+        ilustrace:{" "}
+        <a href="https://www.opendoodles.com/" target="_blank">
+          Open Doodles
+        </a>
+      </p>
+      <span className="footer__span oddelovac">|</span>
     </footer>
   );
 };
