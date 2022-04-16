@@ -1,24 +1,25 @@
 :root {
-  --red: #ba5a66;
+  --headersColor: #ba5a66;
 }
 
 .kontakty-container {
   text-align: center;
+  display: flex;
+  min-height: 720px;
 }
 
-.kontakty-container__header {
-  color: var(--red);
+.kontakty-adikt {
+  flex: 1 1 65%;
+}
+
+.kontakty-adikt__header {
+  color: var(--headersColor);
   font-size: 20px;
   margin-bottom: 15px;
 }
 
 .p--vse {
-  color: var(--red);
-}
-
-.kontakty-results {
-  padding-left: 15px;
-  font-size: 14px;
+  color: var(--headersColor);
 }
 
 .kontakty-kraje__p {
@@ -27,6 +28,15 @@
   cursor: pointer;
   margin-right: 10px;
   font-size: 15px;
+}
+
+.kontakty-results {
+  padding-left: 15px;
+  margin-top: 25px;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .kontakty-results__card {
@@ -40,11 +50,14 @@
   border: 1px solid #99999965;
   border-radius: 5px;
   box-shadow: 6px 5px 6px -5px #999999;
+
+  width: 250px;
+  height: 250px;
 }
 
 .kontakty-results__card__h3 {
   font-size: 15px;
-  color: var(--red);
+  color: var(--headersColor);
 }
 
 .druhZarizeni {
@@ -54,4 +67,20 @@
 
 .kontakty-results__card__a {
   color: #979595;
+}
+
+.kontakty-linky {
+  flex: 1 0 250px;
+  color: white;
+  background-color: #979595;
+  margin-top: -30px;
+  margin-bottom: -30px;
+  padding-top: 30px;
+  border-radius: 0 37px 37px 0;
+}
+
+.kontakty-linky__header {
+  color: var(--headersColor);
+  font-size: 20px;
+  margin-bottom: 15px;
 }
