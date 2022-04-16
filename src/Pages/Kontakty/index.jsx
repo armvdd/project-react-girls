@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 import "./kontakty.css";
 
+import doodle from "./LovingDoodle.svg";
+
 const myApi = "DmzCgfsbqUwKBwUfe57y1v24tXkXDG81htWBc5qh";
 
 const getMedicalFacilities = async () => {
@@ -139,7 +141,15 @@ const Kontakty = () => {
           </p>
         </div>
         <div className="kontakty-results">
-          {isLoading && <p>Loading...</p>}
+          {/*{isLoading && <p>Loading...</p>}*/}
+          {isLoading && (
+            <div className="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          )}
           {data &&
             data.data
               .filter((el) => el.KrajCode.includes(kraj))
@@ -182,6 +192,7 @@ const Kontakty = () => {
           Národní linka pro odvykání
         </p>
         <p className="kontakty-linky__p kontakty-linky__p2">tel: 800 350 000</p>
+        <img src={doodle} className="lovingDoodle" />
       </div>
     </div>
   );

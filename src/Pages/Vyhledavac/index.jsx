@@ -62,7 +62,15 @@ const Vyhledavac = () => {
       </div>
 
       <div className="cards-container">
-        {isLoading && <p>Loading...</p>}
+        {/*{isLoading && <p>Loading...</p>}*/}
+        {isLoading && (
+          <div className="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )}
         {data &&
           data.data
             .filter((el) =>
