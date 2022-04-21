@@ -1,0 +1,13 @@
+.questionchatbotcard--container {
+  width: 650px;
+  height: 120px;
+  border: 1px solid #99999965;
+  border-radius: 5px;
+  /*margin: 0 auto; pak upravit přes flexbox */
+  box-shadow: 6px 5px 6px -5px #999999;
+  margin-right: 15px;
+}
+
+.questionchatbotcard--content {
+  padding: 15px;
+}

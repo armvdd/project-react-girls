@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import Loader from "../../components/Loader";
 import MedicCard from "../../components/MedicCard";
 import "./vyhledavac.css";
 
@@ -63,14 +64,7 @@ const Vyhledavac = () => {
 
       <div className="cards-container">
         {/*{isLoading && <p>Loading...</p>}*/}
-        {isLoading && (
-          <div className="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        )}
+        {isLoading && <Loader />}
         {data &&
           data.data
             .filter((el) =>

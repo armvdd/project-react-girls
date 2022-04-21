@@ -23,6 +23,16 @@
 .cards {
   width: 80%;
   margin: 0 auto;
+}
+
+.questionCard,
+.welresSection {
+  width: 650px;
+  margin: 0 auto;
+}
+
+.answerCards {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

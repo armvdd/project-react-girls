@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useQuery } from "react-query";
 import "./kontakty.css";
 
+import Loader from "../../components/Loader";
+
 import doodle from "./LovingDoodle.svg";
 
 const myApi = "DmzCgfsbqUwKBwUfe57y1v24tXkXDG81htWBc5qh";
@@ -142,14 +144,7 @@ const Kontakty = () => {
         </div>
         <div className="kontakty-results">
           {/*{isLoading && <p>Loading...</p>}*/}
-          {isLoading && (
-            <div className="lds-ellipsis">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          )}
+          {isLoading && <Loader />}
           {data &&
             data.data
               .filter((el) => el.KrajCode.includes(kraj))
@@ -196,6 +191,17 @@ const Kontakty = () => {
           web:{" "}
           <a href="www.chciodvykat.cz" className="kontakty-linky__p3--a">
             www.chciodvykat.cz
+          </a>
+        </p>
+
+        <p className="kontakty-linky__p kontakty-linky__p4">
+          Benzodiazepinová poradna
+        </p>
+        <p className="kontakty-linky__p kontakty-linky__p5">online</p>
+        <p className="kontakty-linky__p kontakty-linky__p6">
+          web:{" "}
+          <a href="www.benzo.cz" className="kontakty-linky__p6--a">
+            www.benzo.cz
           </a>
         </p>
         <img src={doodle} className="lovingDoodle" />
