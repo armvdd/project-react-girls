@@ -3,9 +3,6 @@ import { useQuery } from "react-query";
 import "./chatbot.css";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import ChatbotCard from "../../components/ChatbotCard";
-import WelResCard from "../../components/WelResCard";
-import QuestionChatbotCard from "../../components/QuestionChatbotCard";
 
 const getChatbot = async () => {
   const response = await fetch(`/api/chatbot`);
@@ -15,33 +12,40 @@ const getChatbot = async () => {
   return response.json();
 };
 
-const Chatbot = () => {
+const ChatbotPage = () => {
   //const { data, isLoading } = useQuery("chatbot", getChatbot);
 
-  const [welResCardVisible, setWelResCardVisible] = useState(true);
-  const [cardsVisible, setCardsVisible] = useState(false);
-  const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState([]);
+  const [data, setData] = useState();
 
-  const sort = (questions, answers) => {
-    setQuestions(questions);
-    setAnswers(answers);
-  };
+  const [bubbleVisible, setBubbleVisible] = useState(false);
+  const [userQuestions, setUserQuestions] = useState(false);
+  const [otherQuestions, setOtherQuestions] = useState(false);
 
   useEffect(() => {
     fetch(`/api/chatbot`)
       .then((response) => response.json())
-      .then((data) =>
-        sort(
-          data.data.attributes.chatbot.questions,
-          data.data.attributes.chatbot.answers
-        )
-      );
+      .then((data) => setData(data.data.attributes.chatbot));
   }, []);
 
-  console.log(questions);
-  console.log(answers);
+  //console.log(questions);
+  //console.log(answers);
+  //console.log(data);
 
+  const startClick = () => {
+    if (bubbleVisible) {
+      setBubbleVisible(false);
+    } else if (bubbleVisible === false) {
+      setBubbleVisible(true);
+    }
+  };
+  const yes = () => {
+    setUserQuestions(true);
+    setOtherQuestions(false);
+  };
+  const no = () => {
+    setOtherQuestions(true);
+    setUserQuestions(false);
+  };
   return (
     <div className="chatbot-cotainer">
       {/* HTML ver questionBox
@@ -56,31 +60,54 @@ const Chatbot = () => {
             color="inherit"
             fullWidth={true}
             size="large"
-            onClick={() => setWelResCardVisible(false)}
+            onClick={startClick}
           >
             start
           </Button>
         </Stack>
       </div>
       <div className="cards">
-        {welResCardVisible ? (
-          <div className="welresSection">
-            <WelResCard />
-          </div>
-        ) : (
-          <>
-            <div className="questionCard">
-              <QuestionChatbotCard questions={questions} />
+        <div>
+          {bubbleVisible ? (
+            <div className="bubble">
+              <p className="bubble__question">Užíváte psychotropní látky?</p>
+              <p className="bubble__answer bubble__answer1" onClick={yes}>
+                ANO
+              </p>
+              <p className="bubble__answer bubble__answer2" onClick={no}>
+                NE
+              </p>
             </div>
-            <div className="answerCards">
-              <ChatbotCard />
-              <ChatbotCard />
+          ) : null}
+        </div>
+        <div>
+          {data && userQuestions
+            ? data.questions.map((question) => (
+                <>
+                  <div className="bubble">
+                    <p className="bubble__question">{question.question}</p>
+                  </div>
+                  <div className="bubble2">
+                    {data &&
+                      question.answers.map((answer) => (
+                        <p className="bubble__answer">{answer.title}</p>
+                      ))}
+                  </div>
+                </>
+              ))
+            : null}
+        </div>
+
+        <div>
+          {otherQuestions ? (
+            <div className="bubble2">
+              <p className="bubble__question">Otázky pro ostatní</p>
             </div>
-          </>
-        )}
+          ) : null}
+        </div>
       </div>
     </div>
   );
 };
 
-export default Chatbot;
+export default ChatbotPage;
