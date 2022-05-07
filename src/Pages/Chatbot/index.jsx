@@ -85,7 +85,7 @@ const ChatbotPage = () => {
       <div className="cards">
         <div>
           {bubbleVisible ? (
-            <div className="bubble">
+            <div className="bubble pulse">
               <p className="bubble__question">Užíváte psychotropní látky?</p>
               <p className="bubble__answer bubble__answer1" onClick={yes}>
                 ANO
@@ -114,25 +114,27 @@ const ChatbotPage = () => {
                     <div className="bubble2">
                       {data &&
                         question.answers.map((answer) => (
-                          <p
-                            className="bubble__answer bubble__answer--test"
-                            onClick={() => {
-                              if (question.id < 5) {
-                                setId(question.id + 1);
-                                setCounter(counter + answer.points);
-                              } else if (question.id === 5) {
-                                setCounter(counter + answer.points);
-                                setResults(true);
-                              }
-                              setAnswered(answered + 1);
-                              if (answered >= 5) {
-                                setCounter(counter + 0);
-                              }
-                              console.log(results);
-                            }}
-                          >
-                            {answer.title}
-                          </p>
+                          <>
+                            <p
+                              className="bubble__answer bubble__answer--test"
+                              onClick={() => {
+                                if (question.id < 5) {
+                                  setId(question.id + 1);
+                                  setCounter(counter + answer.points);
+                                } else if (question.id === 5) {
+                                  setCounter(counter + answer.points);
+                                  setResults(true);
+                                }
+                                setAnswered(answered + 1);
+                                if (answered >= 5) {
+                                  setCounter(counter + 0);
+                                }
+                                console.log(results);
+                              }}
+                            >
+                              {answer.title}
+                            </p>
+                          </>
                         ))}
                     </div>
                     <div className="bubble">
