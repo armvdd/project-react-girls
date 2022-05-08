@@ -16,16 +16,24 @@ const getChatbot = async () => {
 const ChatbotPage = () => {
   //const { data, isLoading } = useQuery("chatbot", getChatbot);
 
+  //data
   const [data, setData] = useState();
+  const [data2, setData2] = useState();
 
+  //stavy pro bubliny
   const [bubbleVisible, setBubbleVisible] = useState(false);
   const [userQuestions, setUserQuestions] = useState(false);
   const [otherQuestions, setOtherQuestions] = useState(false);
 
+  //stavy - uživatel
   const [id, setId] = useState(1);
   const [answered, setAnswered] = useState(0);
   const [counter, setCounter] = useState(0);
   const [results, setResults] = useState(false);
+
+  //stavy - ostatní
+  const [id2, setId2] = useState(1);
+  const [otherAnswer, setOtherAnswer] = useState();
 
   useEffect(() => {
     fetch(`/api/chatbot`)
@@ -33,10 +41,17 @@ const ChatbotPage = () => {
       .then((data) => setData(data.data.attributes.chatbot));
   }, []);
 
+  useEffect(() => {
+    fetch(`/api/chatbot2`)
+      .then((response) => response.json())
+      .then((data) => setData2(data.data.attributes.chatbot2));
+  }, []);
+
   //console.log(questions);
   //console.log(answers);
-  //console.log(data);
+  //console.log(data2);
 
+  // funkce
   const startClick = () => {
     if (bubbleVisible) {
       setBubbleVisible(false);
@@ -44,14 +59,17 @@ const ChatbotPage = () => {
       setBubbleVisible(true);
     }
   };
+
   const yes = () => {
     setUserQuestions(true);
     setOtherQuestions(false);
   };
+
   const no = () => {
     setOtherQuestions(true);
     setUserQuestions(false);
   };
+
   const renderResults = () => {
     if (counter < 4) {
       return <p>Celkem na cajk</p>;
@@ -60,6 +78,55 @@ const ChatbotPage = () => {
     } else if (counter >= 7) {
       return <p>Kámo, dělej s tím něco!</p>;
     }
+  };
+
+  const renderOtherAnswers = () => {
+    if (
+      otherAnswer === "Ano/Myslím, že ano." ||
+      otherAnswer === "Nejsem si jistý/jistá."
+    ) {
+      return data2.questions
+        .filter((question) => question.id === 2)
+        .map((question) => (
+          <>
+            <div className="bubble pulse">
+              <p className="bubble__question">{question.question}</p>
+            </div>
+            <div className="bubble2">
+              {data2 &&
+                question.answers.map((answer) => (
+                  <p
+                    className="bubble2__answer"
+                    value={answer}
+                    onClick={handleValue}
+                  >
+                    {answer}
+                  </p>
+                ))}
+            </div>
+          </>
+        ));
+    } else if (otherAnswer === "Ne.") {
+      return data2.questions
+        .filter((question) => question.id === 3)
+        .map((question) => (
+          <>
+            <div className="bubble pulse">
+              <p className="bubble__question">{question.question}</p>
+            </div>
+          </>
+        ));
+    } else if (otherAnswer === "Ne") {
+      return (
+        <div className="bubble pulse">
+          <p>prošlo to</p>
+        </div>
+      );
+    }
+  };
+
+  const handleValue = (value) => {
+    setOtherAnswer(value.target.attributes.value.value);
   };
 
   return (
@@ -83,10 +150,12 @@ const ChatbotPage = () => {
         </Stack>
       </div>
       <div className="cards">
-        <div>
+        {/* První bublina */}
+
+        <div className="firstBubble">
           {bubbleVisible ? (
             <div className="bubble pulse">
-              <p className="bubble__question">Užíváte psychotropní látky?</p>
+              <p className="bubble__question">Užíváte psychoaktivní léky?</p>
               <p className="bubble__answer bubble__answer1" onClick={yes}>
                 ANO
               </p>
@@ -96,7 +165,10 @@ const ChatbotPage = () => {
             </div>
           ) : null}
         </div>
-        <div>
+
+        {/* SDS test */}
+
+        <div className="user">
           {data && userQuestions
             ? data.questions
                 .filter((question) => question.id === id)
@@ -151,12 +223,33 @@ const ChatbotPage = () => {
             : null}
         </div>
 
-        <div>
-          {otherQuestions ? (
-            <div className="bubble2">
-              <p className="bubble__question">Otázky pro ostatní</p>
-            </div>
-          ) : null}
+        {/* Otázky - ostatní */}
+
+        <div className="others">
+          {data2 && otherQuestions
+            ? data2.questions
+                .filter((question) => question.id === id)
+                .map((question) => (
+                  <>
+                    <div className="bubble pulse">
+                      <p className="bubble__question">{question.question}</p>
+                    </div>
+                    <div className="bubble2">
+                      {data2 &&
+                        question.answers.map((answer) => (
+                          <p
+                            className="bubble2__answer"
+                            value={answer}
+                            onClick={handleValue}
+                          >
+                            {answer}
+                          </p>
+                        ))}
+                    </div>
+                  </>
+                ))
+            : null}
+          {data2 && otherQuestions ? <div>{renderOtherAnswers()}</div> : null}
         </div>
       </div>
     </div>

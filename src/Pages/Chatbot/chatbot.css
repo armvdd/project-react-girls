@@ -87,7 +87,8 @@
   filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 
-.bubble__answer {
+.bubble__answer,
+.bubble2__answer {
   cursor: pointer;
 }
 
@@ -100,7 +101,8 @@
   color: red;
 }
 
-.bubble__answer--test:hover {
+.bubble__answer--test:hover,
+.bubble2__answer:hover {
   color: #ba5a66;
 }
 /* animace */

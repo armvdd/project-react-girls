@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "chatbot2s",
+  "info": {
+    "singularName": "chatbot2",
+    "pluralName": "chatbot2s",
+    "displayName": "chatbot2"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "chatbot2": {
+      "type": "json"
+    }
+  }
+}
