@@ -9,15 +9,7 @@ import doodle from "./LovingDoodle.svg";
 const myApi = "DmzCgfsbqUwKBwUfe57y1v24tXkXDG81htWBc5qh";
 
 const getMedicalFacilities = async () => {
-  const query = new URLSearchParams({
-    filter: `{"where":{"OborPece":"Adiktolog"}}`,
-  });
-  const response = await fetch(
-    `https://api.apitalks.store/zdravotni-sluzby?${query}`,
-    {
-      headers: { "x-api-key": myApi },
-    }
-  );
+  const response = await fetch(`/api/zdravotnicka-zarizenis`);
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
@@ -147,34 +139,35 @@ const Kontakty = () => {
           {isLoading && <Loader />}
           {data &&
             data.data
-              .filter((el) => el.KrajCode.includes(kraj))
+              .filter((el) => el.attributes.KrajCode.includes(kraj))
               .map((medFac) => (
                 <div className="kontakty-results__card">
                   <h3 className="kontakty-results__card__h3">
-                    {medFac.NazevZarizeni}
+                    {medFac.attributes.NazevZarizeni}
                   </h3>
                   <p className="kontakty-results__card__p druhZarizeni">
-                    {medFac.DruhZarizeni}
+                    {medFac.attributes.DruhZarizeni}
                   </p>
 
                   <p className="kontakty-results__card__p adresa">
-                    {medFac.Ulice} {medFac.CisloDomovniOrientacni},{" "}
-                    {medFac.Obec}
+                    {medFac.attributes.Ulice}{" "}
+                    {medFac.attributes.CisloDomovniOrientacni},{" "}
+                    {medFac.attributes.Obec}
                   </p>
                   <p className="kontakty-results__card__p telefon">
-                    tel: {medFac.PoskytovatelTelefon}
+                    tel: {medFac.attributes.PoskytovatelTelefon}
                   </p>
                   <p className="kontakty-results__card__p email">
-                    email: {medFac.PoskytovatelEmail}
+                    email: {medFac.attributes.PoskytovatelEmail}
                   </p>
                   <p className="kontakty-results__card__p web">
                     web:{" "}
                     <a
-                      href={medFac.PoskytovatelWeb}
+                      href={medFac.attributes.PoskytovatelWeb}
                       target="_blank"
                       className="kontakty-results__card__a web--a"
                     >
-                      {medFac.PoskytovatelWeb}
+                      {medFac.attributes.PoskytovatelWeb}
                     </a>
                   </p>
                 </div>

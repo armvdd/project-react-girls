@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zdravotnicka_zarizenis",
+  "info": {
+    "singularName": "zdravotnicka-zarizeni",
+    "pluralName": "zdravotnicka-zarizenis",
+    "displayName": "Zdravotnická zařízení"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NazevZarizeni": {
+      "type": "string"
+    },
+    "DruhZarizeni": {
+      "type": "string"
+    },
+    "Obec": {
+      "type": "string"
+    },
+    "Psc": {
+      "type": "string"
+    },
+    "Ulice": {
+      "type": "string"
+    },
+    "CisloDomovniOrientacni": {
+      "type": "string"
+    },
+    "Kraj": {
+      "type": "string"
+    },
+    "KrajCode": {
+      "type": "string"
+    },
+    "Okres": {
+      "type": "string"
+    },
+    "OkresCode": {
+      "type": "string"
+    },
+    "SpravniObvod": {
+      "type": "string"
+    },
+    "PoskytovatelTelefon": {
+      "type": "string"
+    },
+    "PoskytovatelEmail": {
+      "type": "string"
+    },
+    "PoskytovatelWeb": {
+      "type": "string"
+    },
+    "ZdravotnickeZarizeniId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
