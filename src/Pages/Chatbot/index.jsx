@@ -53,6 +53,7 @@ const ChatbotPage = () => {
     setUserQuestions(false);
   };
 
+  // funkce render výsledků testu SDS
   const renderResults = () => {
     if (counter < 4) {
       return <p>Celkem na cajk</p>;
@@ -63,7 +64,9 @@ const ChatbotPage = () => {
     }
   };
 
-  const renderOtherAnswers = () => {
+  // teď neužívaná funkce
+  /*
+  const renderOtherAnswers2 = () => {
     if (
       otherAnswer === "Ano/Myslím, že ano." ||
       otherAnswer === "Nejsem si jistý/jistá."
@@ -110,9 +113,10 @@ const ChatbotPage = () => {
         </div>
       );
     }
-  };
+  }; */
 
-  const renderOtherAnswers2 = () => {
+  // funkce render otázek sekce "pro ostatní"
+  const renderOtherAnswers = () => {
     return data2.questions
       .filter((question) => question.id === id2)
       .map((question) => (
@@ -191,6 +195,7 @@ const ChatbotPage = () => {
       ));
   };
 
+  // funkce pro uložení odpovědi do stavu
   const handleValue = (value) => {
     setOtherAnswer(value.target.attributes.value.value);
   };
@@ -291,8 +296,8 @@ const ChatbotPage = () => {
 
         {/* Otázky - ostatní */}
         <div className="others">
-          {data2 && otherQuestions ? renderOtherAnswers2() : null}
-          {/*{data2 && otherQuestions ? <div>{renderOtherAnswers()}</div> : null}*/}
+          {data2 && otherQuestions ? renderOtherAnswers() : null}
+
           <div className="bubble">
             <p className="bubble__question">id2: {id2}</p>
           </div>
