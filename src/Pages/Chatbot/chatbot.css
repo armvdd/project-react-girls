@@ -2,6 +2,7 @@
   --questionsBoxBgColor: #5abaae;
   --questionBoxFontColor: #ffffff;
 }
+
 .questionsBox {
   background-color: var(--questionsBoxBgColor);
   width: 550px;
@@ -9,10 +10,6 @@
   margin: 45px auto;
   border-radius: 10px;
   text-align: center;
-}
-
-.questionsBox {
-  color: var(--questionBoxFontColor);
 }
 
 .qBox {
@@ -25,20 +22,7 @@
   margin: 0 auto;
 }
 
-.questionCard,
-.welresSection {
-  width: 650px;
-  margin: 0 auto;
-}
-
-.answerCards {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* bubbles verze */
+/* bubbles */
 .bubble,
 .bubble2 {
   position: relative;

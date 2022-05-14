@@ -235,6 +235,8 @@ const ChatbotPage = () => {
           </Button>
         </Stack>
       </div>
+
+      {/* bubbles */}
       <div className="cards">
         {/* První bublina */}
         <div className="firstBubble">
