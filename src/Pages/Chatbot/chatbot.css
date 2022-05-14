@@ -105,6 +105,11 @@
 .bubble2__answer:hover {
   color: #ba5a66;
 }
+
+.handImg {
+  width: 50px;
+}
+
 /* animace */
 
 /* tada */

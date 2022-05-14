@@ -2,15 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Loader from "../../components/Loader";
 import MedicCard from "../../components/MedicCard";
+import { getMedicaments } from "../../queries/vyhledavac";
 import "./vyhledavac.css";
-
-const getMedicaments = async () => {
-  const response = await fetch("/api/medicaments");
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-};
 
 const Vyhledavac = () => {
   //{

@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import "./kontakty.css";
-
+import { getMedicalFacilities } from "../../queries/kontakty";
 import Loader from "../../components/Loader";
 
 import doodle from "./LovingDoodle.svg";
 
 const myApi = "DmzCgfsbqUwKBwUfe57y1v24tXkXDG81htWBc5qh";
-
-const getMedicalFacilities = async () => {
-  const response = await fetch(`/api/zdravotnicka-zarizenis`);
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-};
 
 const Kontakty = () => {
   const [kraj, setKraj] = useState("");

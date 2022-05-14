@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./questionChatbotCard.css";
+
+// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+
 const data = {
   title: "Test",
   questions: [
@@ -57,6 +60,8 @@ const data = {
   ],
 };
 
+// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+
 const Chatbot = ({ questions, answers }) => {
   const [state, setState] = useState({});
   console.log(state);
@@ -65,6 +70,8 @@ const Chatbot = ({ questions, answers }) => {
     console.log(questionId, answerIdx);
     setState((state) => ({ ...state, ...{ [questionId]: answerIdx } }));
   };
+
+  // TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
 
   return (
     <div>
@@ -101,3 +108,5 @@ const Chatbot = ({ questions, answers }) => {
 };
 
 export default Chatbot;
+
+// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
