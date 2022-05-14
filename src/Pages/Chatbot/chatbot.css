@@ -87,6 +87,11 @@
   filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
 }
 
+.bubble__question__number {
+  color: #ba5a66;
+  font-size: 22px;
+}
+
 .bubble__answer,
 .bubble2__answer {
   cursor: pointer;
@@ -106,8 +111,14 @@
   color: #ba5a66;
 }
 
+.bubble__result--flex {
+  display: flex;
+  align-items: center;
+}
+
 .handImg {
   width: 50px;
+  margin-right: 25px;
 }
 
 /* animace */

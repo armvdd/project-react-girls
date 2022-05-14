@@ -7,6 +7,7 @@ import { render } from "@testing-library/react";
 import { getChatbot, getChatbot2 } from "../../queries/chatbot";
 import { Link } from "react-router-dom";
 import hand from "./hand.svg";
+import chatbotIMG from "./chatbot.svg";
 
 const ChatbotPage = () => {
   //data
@@ -35,19 +36,31 @@ const ChatbotPage = () => {
   //console.log(data2);
 
   // funkce
+  // start/reset
   const startClick = () => {
-    if (bubbleVisible) {
+    if (bubbleVisible || userQuestions || otherQuestions) {
       setBubbleVisible(false);
+      setUserQuestions(false);
+      setId(1);
+      setAnswered(0);
+      setCounter(0);
+      setResults(false);
+      setOtherQuestions(false);
+      setId2(1);
+      setOtherResults(false);
+      setResultId();
     } else if (bubbleVisible === false) {
       setBubbleVisible(true);
     }
   };
 
+  // ANO-user
   const yes = () => {
     setUserQuestions(true);
     setOtherQuestions(false);
   };
 
+  // NE-others
   const no = () => {
     setOtherQuestions(true);
     setUserQuestions(false);
@@ -250,7 +263,10 @@ const ChatbotPage = () => {
                     </div>
                     <div className="bubble pulse" key={question.question}>
                       <p className="bubble__question">
-                        otázka č. {question.id}/5
+                        <span className="bubble__question__number">
+                          {question.id}
+                        </span>{" "}
+                        /5
                       </p>
                       <p className="bubble__question">{question.question}</p>
                     </div>
@@ -298,22 +314,22 @@ const ChatbotPage = () => {
         <div className="others">
           {data2 && otherQuestions ? renderOtherAnswers() : null}
 
-          <div className="bubble">
-            <p className="bubble__question">id2: {id2}</p>
-          </div>
           {otherResults
             ? data2.results
                 .filter((result) => result.id === resultId)
                 .map((result) => (
-                  <div className="bubble pulse" key={result.result}>
-                    <p className="bubble__question">{result.result}</p>
+                  <div
+                    className="bubble bubble-results pulse"
+                    key={result.result}
+                  >
+                    <p className="bubble__result">{result.result}</p>
                   </div>
                 ))
             : null}
 
           {otherResults ? (
-            <div className="bubble pulse">
-              <p className="bubble__question">
+            <div className="bubble bubble-results pulse">
+              <p className="bubble__result bubble__result--flex">
                 <img src={hand} className="handImg" />
                 <Link to="/kontakty">kontakty link</Link>
               </p>
