@@ -3,6 +3,11 @@
   text-align: center;
 }
 
+.cards-container {
+  padding: 0 50px;
+  display: flex;
+}
+
 .article-content p {
   margin-bottom: 10px;
 }

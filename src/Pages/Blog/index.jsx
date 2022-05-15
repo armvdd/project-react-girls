@@ -1,6 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { useQuery } from "react-query";
+import BlogCard from "../../components/BlogCard";
 
 import "./blog.css";
 
@@ -12,35 +13,7 @@ const getBlog = async () => {
   return response.json();
 };
 
-/* {data &&
-            data.data.map((article) => (
-              <>
-                <div className="article">
-                  <h3 className="article-header">{article.attributes.title}</h3>
-
-                  <div className="article-content">
-                    {article.attributes.text}
-                  </div>
-                </div>
-              </>
-            ))} 
-            
-            
-            
-            
-            
-            */
-
-const Blog = () => {
-  const { data, isLoading } = useQuery("blog", getBlog);
-
-  return (
-    <div className="blog-container">
-      <h2 className="blog-header">Blog Page</h2>
-      <div className="article-container">
-        {data &&
-          data.data.map((article) => (
-            <>
+/* <>
               <div className="article">
                 <h3 className="article-header">{article.attributes.title}</h3>
 
@@ -49,7 +22,23 @@ const Blog = () => {
                   children={article.attributes.text}
                 />
               </div>
-            </>
+            </> 
+            
+*/
+
+const Blog = () => {
+  const { data, isLoading } = useQuery("blog", getBlog);
+
+  return (
+    <div className="blog-container">
+      <h2 className="blog-header">Blog Page</h2>
+      <div className="cards-container">
+        {data &&
+          data.data.map((article) => (
+            <BlogCard
+              title={article.attributes.title}
+              brief={article.attributes.brief}
+            />
           ))}
       </div>
     </div>

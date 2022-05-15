@@ -29,6 +29,10 @@
         "videos",
         "audios"
       ]
+    },
+    "brief": {
+      "type": "string",
+      "required": true
     }
   }
 }
