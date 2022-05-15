@@ -5,6 +5,7 @@ import Home from "../../Pages/Home";
 import Chatbot from "../../Pages/Chatbot";
 import Vyhledavac from "../../Pages/Vyhledavac";
 import Kontakty from "../../Pages/Kontakty";
+import Blog from "../../Pages/Blog";
 
 const Main = () => {
   return (
@@ -22,6 +23,9 @@ const Main = () => {
           </Route>
           <Route path="/vyhledavac">
             <Vyhledavac />
+          </Route>
+          <Route path="/blog">
+            <Blog />
           </Route>
           <Route path="/kontakty">
             <Kontakty />

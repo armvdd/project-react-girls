@@ -14,6 +14,9 @@ const Menu = () => {
       <Link to="/vyhledavac" className="menuLink menuLink--vyhledavac">
         Vyhledávač
       </Link>
+      <Link to="/blog" className="menuLink menuLink--blog">
+        Blog
+      </Link>
       <Link to="/kontakty" className="menuLink menuLink--kontakty">
         Kontakty
       </Link>
