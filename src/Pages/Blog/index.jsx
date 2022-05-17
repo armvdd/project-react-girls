@@ -23,7 +23,7 @@ const getBlog = async () => {
                 />
               </div>
             </> 
-            
+           
 */
 
 const Blog = () => {
@@ -31,7 +31,7 @@ const Blog = () => {
 
   return (
     <div className="blog-container">
-      <h2 className="blog-header">Blog Page</h2>
+      <h2 className="blog-header">BLOG</h2>
       <div className="cards-container">
         {data &&
           data.data.map((article) => (
