@@ -4,6 +4,7 @@
 }
 
 .mediccard--container {
+  background: #fff;
   max-width: 320px;
   height: 520px;
   border: 1px solid #99999965;

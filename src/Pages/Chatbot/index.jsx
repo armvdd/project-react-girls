@@ -8,6 +8,7 @@ import { getChatbot, getChatbot2 } from "../../queries/chatbot";
 import { Link } from "react-router-dom";
 import hand from "./hand.svg";
 import chatbotIMG from "./chatbot.svg";
+import BubbleQuestion from "../../components/BubbleQuestion";
 
 const ChatbotPage = () => {
   //data
@@ -69,11 +70,32 @@ const ChatbotPage = () => {
   // funkce render výsledků testu SDS
   const renderResults = () => {
     if (counter < 4) {
-      return <p>Celkem na cajk</p>;
+      return (
+        <p>
+          Vaše užívání léků se zdá být pod kontrolou. Užívejte dál zodpovědně a
+          konzultujte s lékařem. Pokud máte i přesto pocit, že není vše v
+          pořádku, můžete se obrátit také na některé z center, které naleznete v
+          sekci <Link to="/kontakty">Kontakty</Link>.
+        </p>
+      );
     } else if (counter > 4 && counter < 7) {
-      return <p>Se to blíží k průseru</p>;
+      return (
+        <p>
+          Vaše užívání léků není zcela pod kontrolou a bez správné a včasné
+          pomoci by se mohla situace zhoršit. Starejte se o sebe a konzultujte
+          se svým lékařem, nebo se obraťte na některé ze specializovaných
+          center, které naleznete v sekci <Link to="/kontakty">Kontakty</Link>.
+        </p>
+      );
     } else if (counter >= 7) {
-      return <p>Kámo, dělej s tím něco!</p>;
+      return (
+        <p>
+          Sám/Sama jistě cítíte, že Vaše užívání léků není pod kontrolou. Řešte
+          svou situaci co nejdříve! Obraťte se na svého lékaře nebo na některé
+          ze specializovaných center, které naleznete v sekci{" "}
+          <Link to="/kontakty">Kontakty</Link>.
+        </p>
+      );
     }
   };
 
@@ -134,9 +156,10 @@ const ChatbotPage = () => {
       .filter((question) => question.id === id2)
       .map((question) => (
         <>
-          <div className="bubble pulse" key={question.question}>
-            <p className="bubble__question">{question.question}</p>
-          </div>
+          <BubbleQuestion
+            question={question.question}
+            key={question.question}
+          />
           <div className="bubble2">
             {data2 &&
               question.answers.map((answer) => (
@@ -156,11 +179,13 @@ const ChatbotPage = () => {
                       id2 === 1
                     ) {
                       setId2(4);
+                      setOtherResults(false);
                     } else if (
                       value.target.attributes.value.value === "Ano." &&
                       id2 === 2
                     ) {
                       setId2(3);
+                      setOtherResults(false);
                     } else if (
                       value.target.attributes.value.value ===
                       "Odmítá, že má nějaký problém."
@@ -260,18 +285,14 @@ const ChatbotPage = () => {
                 .filter((question) => question.id === id)
                 .map((question) => (
                   <>
-                    <div className="bubble">
-                      <p className="bubble__question">{question.title}</p>
-                    </div>
-                    <div className="bubble pulse" key={question.question}>
-                      <p className="bubble__question">
-                        <span className="bubble__question__number">
-                          {question.id}
-                        </span>{" "}
-                        /5
-                      </p>
-                      <p className="bubble__question">{question.question}</p>
-                    </div>
+                    <BubbleQuestion question={question.title} />
+                    <BubbleQuestion
+                      question={question.question}
+                      qId={question.id}
+                      sum="/5"
+                      key={question.question}
+                    />
+
                     <div className="bubble2">
                       {data &&
                         question.answers.map((answer) => (
@@ -332,7 +353,7 @@ const ChatbotPage = () => {
           {otherResults ? (
             <div className="bubble bubble-results pulse">
               <p className="bubble__result bubble__result--flex">
-                <img src={hand} className="handImg" />
+                <img src={hand} className="handImg" alt="ruka" />
                 <Link to="/kontakty">kontakty link</Link>
               </p>
             </div>

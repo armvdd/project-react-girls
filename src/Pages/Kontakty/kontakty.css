@@ -42,7 +42,7 @@
 .kontakty-results__card {
   display: inline-block;
   text-align: left;
-
+  background: #fff;
   margin-top: 15px;
   margin-right: 15px;
   padding: 10px;

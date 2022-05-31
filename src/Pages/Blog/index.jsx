@@ -38,6 +38,7 @@ const Blog = () => {
             <BlogCard
               title={article.attributes.title}
               brief={article.attributes.brief}
+              text={article.attributes.text}
             />
           ))}
       </div>
