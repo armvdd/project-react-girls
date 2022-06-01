@@ -2,7 +2,7 @@
   "name": "project-reactgirls",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://dobroapp.herokuapp.com/",
+  "proxy": "http://localhost:1337",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
