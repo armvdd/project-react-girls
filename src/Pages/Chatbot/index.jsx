@@ -319,10 +319,7 @@ const ChatbotPage = () => {
                           </>
                         ))}
                     </div>
-                    <div className="bubble">
-                      <p className="bubble__question">points: {counter}</p>
-                      <p className="bubble__question">answered: {answered}</p>
-                    </div>
+
                     {results ? (
                       <div className="bubble pulse">
                         <p>{renderResults()}</p>
