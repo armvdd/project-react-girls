@@ -3,48 +3,41 @@
   --btnKontaktyColor: #ba5a66;
   --btnKontaktyFontColor: #76c9c3;
 }
-
+/* mobile frst */
 .home {
   text-align: left;
+  padding: 10px;
 }
 
 .header-h1 {
   text-align: center;
   text-transform: uppercase;
-  font-size: 30px;
   font-weight: bold;
   color: var(--mainHeaderColor);
+  font-size: 22px;
+  margin-bottom: 25px;
 }
 
 .header-h2 {
   color: var(--h2HeaderColor);
+  text-transform: uppercase;
+  font-size: 17px;
+  margin-bottom: 20px;
 }
 
 .infostatsbox {
-  width: 75%;
-  display: flex;
-  justify-content: space-between;
-  gap: 90px;
-  margin: 75px auto;
+  width: 100%;
 }
 
-.info {
-  flex: 1 0 45%;
-  /*padding: 0 15px 0 30px; */
-}
-
-.p--info__p1 {
-  margin-bottom: 15px;
-}
-
-.stats {
-  flex: 1 1 45%;
-  padding-top: 30px;
-}
-
-.p--stats__p1 {
-  position: relative;
+.p--info__p1,
+.p--info__p2 {
   margin-bottom: 10px;
+}
+
+.stats--psychograf {
+  display: block;
+  width: 275px;
+  margin: 25px auto;
 }
 
 .p--stats__p1__star {
@@ -56,7 +49,7 @@
 .p--stats__p2 {
   font-size: 10px;
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 12px;
   position: relative;
 }
 
@@ -67,38 +60,112 @@
   left: -5.5px;
 }
 
-.stats--psychograf {
-  width: 295px;
-  margin-top: 20px;
-}
-
 .alert {
-  width: 75%;
-  margin: 0 auto;
-  padding: 15px 30px;
+  margin-top: 25px;
 }
 
+.p--alert__p1,
 .p--alert__p2 {
-  margin: 10px 0;
-}
-
-.a--btn__kontakty {
-  display: block;
-  padding: 10px;
-  width: 150px;
-  background-color: var(--btnKontaktyColor);
-  color: var(--btnKontaktyFontColor);
-  text-decoration: none;
-  border-radius: 10px;
-  margin: 10px auto;
-  text-align: center;
-}
-
-.a--btn__kontakty:hover {
-  padding: 11px;
+  margin-bottom: 10px;
 }
 
 .btn--kontakty {
   max-width: 100px;
-  margin: 0 auto;
+  margin: 25px auto;
+}
+
+/* PC */
+@media screen and (min-width: 1200px) {
+  .header-h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+
+  .infostatsbox {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    gap: 90px;
+    margin: 75px auto;
+  }
+
+  .info {
+    flex: 1 0 45%;
+    /*padding: 0 15px 0 30px; */
+  }
+
+  .header-h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .p--info__p1 {
+    margin-bottom: 15px;
+  }
+
+  .stats {
+    flex: 1 1 45%;
+    padding-top: 30px;
+  }
+
+  .p--stats__p1 {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .p--stats__p1__star {
+    font-size: 10px;
+    color: #ba5a66;
+    position: absolute;
+  }
+
+  .p--stats__p2 {
+    font-size: 10px;
+    font-style: italic;
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .p--stats__p2__star {
+    color: #ba5a66;
+    font-size: 7px;
+    position: absolute;
+    left: -5.5px;
+  }
+
+  .stats--psychograf {
+    width: 295px;
+    margin-top: 20px;
+  }
+
+  .alert {
+    width: 75%;
+    margin: 0 auto;
+    padding: 15px 30px;
+  }
+
+  .p--alert__p2 {
+    margin: 10px 0;
+  }
+
+  .a--btn__kontakty {
+    display: block;
+    padding: 10px;
+    width: 150px;
+    background-color: var(--btnKontaktyColor);
+    color: var(--btnKontaktyFontColor);
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .a--btn__kontakty:hover {
+    padding: 11px;
+  }
+
+  .btn--kontakty {
+    max-width: 100px;
+    margin: 0 auto;
+  }
 }

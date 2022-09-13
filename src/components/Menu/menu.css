@@ -3,21 +3,40 @@
   --menuHoverColor: #ba5a66;
 }
 
+/* mobile frst */
 .menu {
-  text-align: right;
-  padding: 25px 70px;
+  display: none;
 }
 
-.menuLink {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: var(--fontColor);
-  margin-right: 30px;
+.menu-mobile--img {
+  width: 55px;
+  padding: 10px;
 }
 
-.menuLink:hover {
-  color: var(--menuHoverColor);
-}
-.menu-ul__li {
-  display: inline-block;
+/* PC */
+@media screen and (min-width: 1200px) {
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    text-align: right;
+    padding: 25px 70px;
+  }
+
+  .menuLink {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--fontColor);
+    margin-right: 30px;
+  }
+
+  .menuLink:hover {
+    color: var(--menuHoverColor);
+  }
+
+  .menu-ul__li {
+    display: inline-block;
+  }
 }

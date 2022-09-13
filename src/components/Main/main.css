@@ -2,18 +2,37 @@
   --mainPartInsideBgColor: #f2f2f2;
   --mainPartDefaultFontColor: #8e999b;
 }
+/* mobile frst */
+
 .mainPart {
   background-color: var(--mainPartBgColor);
   color: var(--mainPartDefaultFontColor);
   width: 100%;
-  min-height: 720px;
+  min-height: 550px;
 }
 
 .mainPart-inside {
   background-color: var(--mainPartInsideBgColor);
-  border-radius: 37px;
+  border-radius: 25px;
   width: 100%;
-  min-height: 720px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  min-height: 550px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* PC */
+@media screen and (min-width: 1200px) {
+  .mainPart {
+    width: 100%;
+    min-height: 720px;
+  }
+
+  .mainPart-inside {
+    background-color: var(--mainPartInsideBgColor);
+    border-radius: 37px;
+    width: 100%;
+    min-height: 720px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
