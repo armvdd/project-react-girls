@@ -59,6 +59,7 @@ const ChatbotPage = () => {
   const yes = () => {
     setUserQuestions(true);
     setOtherQuestions(false);
+    setOtherResults(false);
   };
 
   // NE-others

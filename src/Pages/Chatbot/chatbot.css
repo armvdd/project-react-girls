@@ -3,6 +3,8 @@
   --questionBoxFontColor: #ffffff;
 }
 
+/* mobile frst */
+
 .questionsBox {
   background-color: var(--questionsBoxBgColor);
   width: 550px;
@@ -15,6 +17,10 @@
 .qBox {
   max-width: 650px;
   margin: 20px auto;
+}
+.css-m69qwo-MuiStack-root {
+  width: 250px;
+  margin: 0 auto;
 }
 
 .cards {
@@ -52,7 +58,6 @@
 }
 
 .bubble2 {
-  left: 50%;
   background-color: #5abaae;
   color: #fff;
 }
@@ -90,6 +95,11 @@
   color: red;
 }
 
+.bubble__answer--test,
+.bubble2__answer {
+  margin-bottom: 10px;
+}
+
 .bubble__answer--test:hover,
 .bubble2__answer:hover {
   color: #ba5a66;
@@ -103,6 +113,18 @@
 .handImg {
   width: 50px;
   margin-right: 25px;
+}
+
+/* PC */
+@media screen and (min-width: 1200px) {
+  .css-m69qwo-MuiStack-root {
+    width: 100%;
+    margin: 0;
+  }
+
+  .bubble2 {
+    left: 50%;
+  }
 }
 
 /* animace */
