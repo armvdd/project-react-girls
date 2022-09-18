@@ -1,14 +1,21 @@
+.blog-container {
+  min-height: 1350px;
+}
+
 .blog-header {
   color: #ba5a66;
   text-align: center;
 }
 
-.cards-container {
-  width: 80%;
-  margin: 25px auto;
-  padding: 0 50px;
-}
+@media screen and (min-width: 1200px) {
+  .cards-container {
+    width: 80%;
+    height: 100%;
+    margin: 25px auto;
+    padding: 0 50px;
+  }
 
-.article-content p {
-  margin-bottom: 10px;
+  .article-content p {
+    margin-bottom: 10px;
+  }
 }
