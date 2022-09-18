@@ -6,6 +6,93 @@
   margin: 0;
 }
 
+/* nové blogcards css */
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.row {
+  padding: 50px 0;
+}
+
+.seperator {
+  margin-bottom: 30px;
+  width: 35px;
+  height: 3px;
+  background: #777;
+  border: none;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 30px;
+  min-height: 1px;
+  float: left;
+}
+
+.item .item-in {
+  background: #fff;
+  padding: 40px;
+  position: relative;
+}
+
+.item .item-in:hover:before {
+  width: 100%;
+}
+
+.item .item-in::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 0%;
+  background: #333333;
+  right: 0px;
+  transition: width 0.4s;
+}
+
+.item h4 {
+  font-size: 18px;
+  margin-top: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.item p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.item a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #666666;
+  margin-top: 10px;
+}
+
+.item a i {
+  opacity: 0;
+  padding-left: 0px;
+  transition: 0.4s;
+  font-size: 24px;
+  display: inline-block;
+  top: 5px;
+  position: relative;
+}
+
+.item a:hover {
+  text-decoration: none;
+  color: #ba5a66;
+}
+
+.item a:hover i {
+  padding-left: 10px;
+  opacity: 1;
+  font-weight: 300;
+}
+
+/* původní blogcards css */
+/*
 .card {
   padding: 25px;
   margin-bottom: 20px;
@@ -55,3 +142,4 @@
 .btn_primary:hover {
   box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
 }
+*/

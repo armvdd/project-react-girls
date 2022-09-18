@@ -1,24 +1,36 @@
+/* mobile frst */
 .vyhledavac-container {
   text-align: center;
-}
-
-.cards-container {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 .searchBox {
   margin-bottom: 25px;
 }
 
-.searchBox__input {
-  width: 350px;
-  height: 25px;
-  text-align: center;
-  border-color: #dfdfdf;
-  border-style: solid;
-  padding: 2.5px;
+.cards-container {
+  width: 100%;
+}
+
+/* PC */
+@media screen and (min-width: 1200px) {
+  .cards-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .searchBox {
+    margin-bottom: 25px;
+  }
+
+  .searchBox__input {
+    width: 350px;
+    height: 25px;
+    text-align: center;
+    border-color: #dfdfdf;
+    border-style: solid;
+    padding: 2.5px;
+  }
 }
