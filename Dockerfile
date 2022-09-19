@@ -19,7 +19,7 @@ COPY /nginx.conf /nginx_template.conf
 
 COPY nginx_init.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/bin/bash", "entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "entrypoint.sh"]
 
 CMD ["nginx", "-g", "daemon off;"]
 
