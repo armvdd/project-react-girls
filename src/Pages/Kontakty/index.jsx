@@ -10,6 +10,7 @@ const myApi = "DmzCgfsbqUwKBwUfe57y1v24tXkXDG81htWBc5qh";
 
 const Kontakty = () => {
   const [kraj, setKraj] = useState("");
+
   const { data, isLoading } = useQuery(
     "medicalFacilities",
     getMedicalFacilities
