@@ -11,8 +11,22 @@
   width: 100%;
 }
 
+.mediccard--container {
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.searchBox__input {
+  width: 250px;
+  height: 25px;
+  text-align: center;
+  border-color: #dfdfdf;
+  border-style: solid;
+  padding: 2.5px;
+}
+
 /* PC */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 481px) {
   .cards-container {
     width: 80%;
     margin: 0 auto;
@@ -27,10 +41,5 @@
 
   .searchBox__input {
     width: 350px;
-    height: 25px;
-    text-align: center;
-    border-color: #dfdfdf;
-    border-style: solid;
-    padding: 2.5px;
   }
 }
