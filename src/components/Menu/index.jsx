@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "./menu.css";
 
-import hamburgerMenu from "./ham-menu.svg";
+import mobileMenu from "./MENU.svg";
 
 const Menu = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    if (open === false) {
+      setOpen(true);
+    } else if (open === true) {
+      setOpen(false);
+    }
+  };
+
   return (
     <>
       <div className="menu">
@@ -25,8 +34,12 @@ const Menu = () => {
         </Link>
       </div>
       <div className="menu-mobile">
-        <img src={hamburgerMenu} className="menu-mobile--img" />
-        <div className="menu-mobile--menu">
+        <img
+          src={mobileMenu}
+          className="menu-mobile--img"
+          onClick={handleClick}
+        />
+        <div className={open ? "menu-mobile--menu" : "menu-mobile--hidden"}>
           <Link to="/home" className="menuLink-mobile menuLink--home-mobile">
             Home
           </Link>
