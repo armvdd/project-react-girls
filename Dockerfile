@@ -19,4 +19,8 @@ COPY /nginx.conf /nginx_template.conf
 
 COPY nginx_init.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+<<<<<<< HEAD
 ENTRYPOINT ["./entrypoint.sh"]
+=======
+ENTRYPOINT ["./entrypoint.sh"]
+>>>>>>> 0b9e629fb940d39b76ee599d24680ffd4553ec1f
