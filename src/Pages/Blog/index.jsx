@@ -2,6 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { useQuery } from "react-query";
 import BlogCard from "../../components/BlogCard";
+import Loader from "../../components/Loader";
 
 import "./blog.css";
 
@@ -33,6 +34,7 @@ const Blog = () => {
     <div className="blog-container">
       <h2 className="blog-header">BLOG</h2>
       <div className="cards-container">
+        {isLoading && <Loader />}
         {data &&
           data.data.map((article) => (
             <BlogCard

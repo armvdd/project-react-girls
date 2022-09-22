@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+
 import { useQuery } from "react-query";
 import "./kontakty.css";
 import { getMedicalFacilities } from "../../queries/kontakty";
 import Loader from "../../components/Loader";
 
 import doodle from "./LovingDoodle.svg";
+import { fontWeight, style } from "@mui/system";
+import { red } from "@mui/material/colors";
 
 const myApi = "DmzCgfsbqUwKBwUfe57y1v24tXkXDG81htWBc5qh";
 
@@ -31,7 +34,9 @@ const Kontakty = () => {
           <p
             className="kontakty-kraje__p p--praha"
             id="CZ010"
-            onClick={() => setKraj("CZ010")}
+            onClick={() => {
+              setKraj("CZ010");
+            }}
           >
             Hlavní město Praha
           </p>
